@@ -32,3 +32,20 @@ class Variant {
 
 };
 
+std::string Variant::to_string() {
+    std::cout << "to_string" << std::endl;
+}
+
+std::string Variant::to_json_string() {
+    std::cout << "to_json_string" << std::endl;
+}
+
+Variant Variant::from_json_string(std::string sjson) {
+    std::cout << "from_json_string" << std::endl;
+}
+
+Variant Variant::parse_json(jsonlib::Json job) {
+    // Tu implementación aquí
+}
+
+
