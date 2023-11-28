@@ -49,5 +49,18 @@ Variant Variant::parse_json(jsonlib::Json job) {
 }
 
 struct entorno {
-    
+    Variant::map vars;
+    entorno* padre;
+
+    entorno(entorno* padre = 0) : padre(padre) { }
+
+    Variant& operator[] (const std::string& s) {
+        entorno* e = this;
+        while (e) {
+            Variant::map::iterator it = e->vars.find(s);
+            if (it != e->vars.end()) return it->second;
+            e = e->padre;
+        }
+        throw std::string("Variable no definida: ") + s;
+    }
 };
