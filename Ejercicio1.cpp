@@ -48,4 +48,6 @@ Variant Variant::parse_json(jsonlib::Json job) {
     // Tu implementación aquí
 }
 
-
+struct entorno {
+    
+};
