@@ -6,3 +6,9 @@
 #include "jsonlib.hpp"
 
 enum variant_type { simbolo, numero, lista, proc, lambda, cadena};
+
+struct entorno;
+
+class variant {
+    
+};
